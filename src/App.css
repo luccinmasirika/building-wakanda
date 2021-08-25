@@ -1,0 +1,23 @@
+.active span::after {
+  content: '';
+  width: 26px;
+  height: 2px;
+  background-color: burlywood;
+  position: absolute;
+  right: 25px;
+  bottom: 0;
+}
+
+.active span {
+  position: relative;
+}
+
+.lang-bar::before {
+  content: '';
+  width: 3px;
+  height: 24px;
+  left: -12px;
+  border-radius: 10px;
+  position: absolute;
+  background: rgba(107, 114, 128);
+}

@@ -1,0 +1,118 @@
+import * as React from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { CgMenuRight } from 'react-icons/cg';
+import { FaGlobe, FaAngleDown } from 'react-icons/fa';
+import '../../App.css';
+import Logo from '../../assets/img/logo.png';
+
+interface IMenuProps {}
+
+const useActivetPath = (props: string): string => {
+  const location = useLocation();
+  if (props === `/${location.pathname.split('/')[1]}`) {
+    return 'text-gray-900 active font-bold';
+  }
+  return 'text-gray-500';
+};
+
+export const Menu: React.FC<IMenuProps> = (props) => {
+  return (
+    <nav className='bg-white shadow fixed w-full' role='navigation'>
+      <div className='container md:mx-auto md:px-10 px-4 py-4 flex flex-wrap items-center md:flex-no-wrap'>
+        <div className='mr-4 md:mr-8'>
+          <Link to='/home' className={` cursor-pointer ${useActivetPath('/')}`}>
+            <img
+              src={Logo}
+              className='w-auto h-12'
+              alt='Logo Building Wakanda'
+            />
+          </Link>
+        </div>
+        <div className='ml-auto flex md:hidden'>
+          <div className='flex px-4 py-1 items-center text-gray-500 cursor-pointer lang-bar'>
+            <FaGlobe size='18' className='mr-1' />
+            Eng <FaAngleDown className='mt-1' />
+          </div>
+          <button
+            className='flex items-center py-2 rounded cursor-pointer active:bg-gray-50'
+            type='button'
+          >
+            <CgMenuRight size='32' className='active:tex-red-500' />
+          </button>
+        </div>
+        <div className='w-full md:w-auto md:flex-grow md:flex md:items-center'>
+          <ul className='flex flex-col mt-4 -mx-4 pt-4 border-t md:flex-row md:items-center md:mx-0 md:ml-auto md:mt-0 md:pt-0 md:border-0'>
+            <li>
+              <Link
+                to='/'
+                className={`${useActivetPath('/')}`}
+                title='Who we are'
+              >
+                <span className='block px-4 py-1 md:p-2 lg:px-4'>
+                  Who we are
+                </span>
+              </Link>
+            </li>
+            <li>
+              <Link
+                to='/projects'
+                className={`${useActivetPath('/projects')}`}
+                title='Item 1'
+              >
+                <span className='flex items-center px-4 py-1 md:p-2 lg:px-4'>
+                  Projects <FaAngleDown className='mt-1' />
+                </span>
+              </Link>
+            </li>
+            <li>
+              <Link
+                to='/our-leaders'
+                className={`${useActivetPath('/our-leaders')}`}
+                title='Item 2'
+              >
+                <span className='block px-4 py-1 md:p-2 lg:px-4'>
+                  Our Leaders
+                </span>
+              </Link>
+            </li>
+            <li>
+              <Link
+                to='/blog'
+                className={`${useActivetPath('/blog')}`}
+                title='Item 2'
+              >
+                <span className='block px-4 py-1 md:p-2 lg:px-4'>Blog</span>
+              </Link>
+            </li>
+            <li>
+              <Link
+                to='/gallery'
+                className={`${useActivetPath('/gallery')}`}
+                title='Item 2'
+              >
+                <span className='block px-4 py-1 md:p-2 lg:px-4'>Gallery</span>
+              </Link>
+            </li>
+            <li>
+              <Link
+                to='/contact-us'
+                className={`${useActivetPath('/contact-us')}`}
+                title='Item 2'
+              >
+                <span className='block px-4 py-1 md:p-2 lg:px-4'>
+                  Contact Us
+                </span>
+              </Link>
+            </li>
+            <li className='md:block hidden ml-4 relative'>
+              <div className='flex px-4 py-1 items-center text-gray-500 cursor-pointer lang-bar'>
+                <FaGlobe size='18' className='mr-1' />
+                Eng <FaAngleDown className='mt-1' />
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  );
+};
