@@ -35,6 +35,7 @@ export const Menu: React.FC<IMenuProps> = (props) => {
           </div>
           <button
             className='flex items-center py-2 rounded cursor-pointer active:bg-gray-50'
+            aria-label='Show menu'
             type='button'
           >
             <CgMenuRight size='32' className='active:tex-red-500' />
