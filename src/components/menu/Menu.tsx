@@ -17,7 +17,7 @@ const useActivetPath = (props: string): string => {
 
 export const Menu: React.FC<IMenuProps> = (props) => {
   return (
-    <nav className='bg-white shadow fixed w-full' role='navigation'>
+    <nav className='bg-white shadow fixed w-full z-50' role='navigation'>
       <div className='container md:mx-auto md:px-10 px-4 py-4 flex flex-wrap items-center md:flex-no-wrap'>
         <div className='mr-4 md:mr-8'>
           <Link to='/home' className={` cursor-pointer ${useActivetPath('/')}`}>
@@ -41,7 +41,7 @@ export const Menu: React.FC<IMenuProps> = (props) => {
           </button>
         </div>
         <div className='w-full md:w-auto md:flex-grow md:flex md:items-center'>
-          <ul className='flex flex-col mt-4 -mx-4 pt-4 border-t md:flex-row md:items-center md:mx-0 md:ml-auto md:mt-0 md:pt-0 md:border-0'>
+          <ul className='hidden md:flex flex-col mt-4 -mx-4 pt-4 border-t md:flex-row md:items-center md:mx-0 md:ml-auto md:mt-0 md:pt-0 md:border-0'>
             <li>
               <Link
                 to='/'
