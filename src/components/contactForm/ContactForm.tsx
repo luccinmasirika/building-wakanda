@@ -4,7 +4,7 @@ interface IContactFormProps {}
 
 export const ContactForm: React.FC<IContactFormProps> = (props) => {
   return (
-    <div className='conatainer flex flex-col justify-center w-10/12 mx-auto h-full p-8'>
+    <div className='conatainer flex flex-col justify-center mx-auto h-full p-4 md:p-8'>
       <input
         type='text'
         placeholder='First Name'
