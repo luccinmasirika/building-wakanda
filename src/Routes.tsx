@@ -8,6 +8,7 @@ import { Galley } from './containers/gallery';
 import { Footer } from './components/footer';
 import { OurLeaders } from './containers/ourLeaders';
 import { ContactUs } from './containers/contactUs';
+import { Blog } from './containers/blog';
 
 const Routes: React.FC = () => {
   return (
@@ -20,6 +21,7 @@ const Routes: React.FC = () => {
         <Route exact path='/gallery' component={Galley} />
         <Route exact path='/our-leaders' component={OurLeaders} />
         <Route exact path='/contact-us' component={ContactUs} />
+        <Route exact path='/blog' component={Blog} />
         <Route path='*' component={NotFound} />
       </Switch>
       <Footer />
