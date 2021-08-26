@@ -30,11 +30,11 @@ const PHOTOS = [
 ];
 const PHOTOS2 = [Img2];
 
-export const Galley: React.FunctionComponent<IGalleyProps> = (props) => {
+export const Galley: React.FC<IGalleyProps> = (props) => {
   const [isOpen, setIsOpen] = React.useState(false);
 
   return (
-    <div className='container mx-auto pt-20 z-10 relative mb-60 bg-white'>
+    <div className='container mx-auto pt-20 z-10 relative  bg-white'>
       <ReactBnbGallery
         show={isOpen}
         photos={PHOTOS}
@@ -65,7 +65,20 @@ export const Galley: React.FunctionComponent<IGalleyProps> = (props) => {
       </div>
       <div className='grid grid-cols-1 md:grid-cols-4 gap-4 md:mx-44 px-3'>
         {PHOTOS.map((x, y) => (
-          <img key={y} src={x} alt='img' className='rounded-md' />
+          <>
+            {0 ? (
+              <div className='bg-gray-200 w-full h-48 rounded-md'>
+                <img
+                  key={y}
+                  src={x}
+                  alt='img'
+                  className='rounded-md object-cover h-full w-full'
+                />
+              </div>
+            ) : (
+              <div className='bg-gray-200 w-full h-48 rounded-md animate-pulse' />
+            )}
+          </>
         ))}
       </div>
       <div className='w-full bg-gray-100 h-40 transform -skew-y-2 translate-y-28 z-0'></div>
@@ -73,20 +86,25 @@ export const Galley: React.FunctionComponent<IGalleyProps> = (props) => {
         {/* <div className='w-full bg-gray-100 flex justify-center relative transform -translate-y-16 pb-10 z-20'>
           <h1 className='text-6xl'>Video galley</h1>
         </div> */}
-        <div className='grid grid-cols-1 md:grid-cols-4 gap-4 md:mx-44 px-3 z-1'>
+        <div className='grid grid-cols-1 md:grid-cols-3 gap-4 md:mx-44 px-3 z-1'>
           {Array(12)
             .fill(null)
             .map((x, y) => (
-              <iframe
-                width='100%'
-                key={y}
-                height='100%'
-                className='rounded-md z-10'
-                title='video'
-                src='https://www.youtube.com/embed/iFItARqIAjY'
-                frameBorder={0}
-                allowFullScreen
-              />
+              <>
+                {0 ? (
+                  <iframe
+                    width='100%'
+                    key={y}
+                    className='rounded-md bg-gray-300 w-full z-10 h-60'
+                    title='video'
+                    src='https://www.youtube.com/embed/iFItARqIAjY'
+                    frameBorder={0}
+                    allowFullScreen
+                  />
+                ) : (
+                  <div className='bg-gray-300 w-full h-60 rounded-md animate-pulse' />
+                )}
+              </>
             ))}
         </div>
       </div>

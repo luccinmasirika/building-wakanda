@@ -5,9 +5,9 @@ import Image3 from '../../assets/img/leaders/leader3.jpg';
 
 interface IOurLeaderProps {}
 
-export const OurLeaders: React.FunctionComponent<IOurLeaderProps> = (props) => {
+export const OurLeaders: React.FC<IOurLeaderProps> = (props) => {
   return (
-    <div className='container mx-auto py-20 z-10 relative mb-60 bg-white'>
+    <div className='container mx-auto py-20 z-10 relative  bg-white'>
       <h1 className='text-5xl'>Peoples</h1>
 
       <div className='py-8 px-8 max-w-sm mx-auto bg-white rounded-xl shadow-md space-y-2 sm:py-4 sm:flex sm:items-center sm:space-y-0 sm:space-x-6'>

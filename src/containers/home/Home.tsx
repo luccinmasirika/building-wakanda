@@ -8,9 +8,9 @@ import { Objectif } from './../../components/objectif';
 
 interface IHomeProps {}
 
-export const Home: React.FunctionComponent<IHomeProps> = (props) => {
+export const Home: React.FC<IHomeProps> = (props) => {
   return (
-    <main className='z-10 relative mb-60 bg-gray-100'>
+    <main className='z-10 relative  bg-gray-100'>
       <Banner />
       <Description />
       <Personne />
