@@ -14,6 +14,7 @@ export const ContactUs: React.FC<IContactUsProps> = (props) => {
           reiciendis autem quibusdam error a, at voluptatem voluptatibus omnis
           placeat, blanditiis pariatur.
         </p>
+
         <h1 className='text-4xl m-8'>Lorem Ipsum</h1>
         <p className='m-8'>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam
