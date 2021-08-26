@@ -34,7 +34,7 @@ export const Galley: React.FunctionComponent<IGalleyProps> = (props) => {
   const [isOpen, setIsOpen] = React.useState(false);
 
   return (
-    <div className='container mx-auto py-20 z-10 relative mb-60 bg-gray-100'>
+    <div className='container mx-auto pt-20 z-10 relative mb-60 bg-white'>
       <ReactBnbGallery
         show={isOpen}
         photos={PHOTOS}
