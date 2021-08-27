@@ -101,10 +101,10 @@ export const ActivityReport: React.FC<IActivityReportProps> = (props) => {
             </td>
             <td className='border border-gray-800 '>
               <a
-                href='https://www.buildingwakanda.com'
+                href='https://www.building-wakanda.org'
                 className='text-blue-500'
               >
-                https://www.buildingwakanda.com
+                https://www.building-wakanda.org
               </a>
             </td>
           </tr>
