@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { CgMenuRight } from 'react-icons/cg';
 import { FaGlobe, FaAngleDown } from 'react-icons/fa';
 import '../../App.css';
-import Logo from '../../assets/img/logo.png';
+import Logo from '../../assets/img/logoNoir.png';
 
 interface IMenuProps {}
 
@@ -16,14 +16,18 @@ const useActivetPath = (props: string): string => {
 };
 
 export const Menu: React.FC<IMenuProps> = (props) => {
+  const [state, setState] = React.useState(false);
+  const onShowMenu = () => {
+    return setState(!state);
+  };
   return (
     <nav className='bg-white shadow fixed w-full z-50' role='navigation'>
-      <div className='container md:mx-auto md:px-10 px-4 py-4 flex flex-wrap items-center md:flex-no-wrap'>
+      <div className='container md:mx-auto md:px-10 px-4 py-2 flex flex-wrap items-center md:flex-no-wrap'>
         <div className='mr-4 md:mr-8'>
-          <Link to='/home' className={` cursor-pointer ${useActivetPath('/')}`}>
+          <Link to='/' className={` cursor-pointer ${useActivetPath('/')}`}>
             <img
               src={Logo}
-              className='w-auto h-12'
+              className='w-auto h-16 md:h-20'
               alt='Logo Building Wakanda'
             />
           </Link>
@@ -31,22 +35,28 @@ export const Menu: React.FC<IMenuProps> = (props) => {
         <div className='ml-auto flex md:hidden'>
           <div className='flex px-4 py-1 items-center text-gray-500 cursor-pointer lang-bar'>
             <FaGlobe size='18' className='mr-1' />
-            Eng <FaAngleDown className='mt-1' />
+            En {/* Eng <FaAngleDown className='mt-1' /> */}
           </div>
           <button
             className='flex items-center py-2 rounded cursor-pointer active:bg-gray-50'
             aria-label='Show menu'
+            onClick={onShowMenu}
             type='button'
           >
             <CgMenuRight size='32' className='active:tex-red-500' />
           </button>
         </div>
         <div className='w-full md:w-auto md:flex-grow md:flex md:items-center'>
-          <ul className='hidden md:flex flex-col mt-4 -mx-4 pt-4 border-t md:flex-row md:items-center md:mx-0 md:ml-auto md:mt-0 md:pt-0 md:border-0'>
+          <ul
+            className={`${
+              !state && 'hidden'
+            } md:flex flex-col mt-4 -mx-4 pt-4 border-t md:flex-row md:items-center md:mx-0 md:ml-auto md:mt-0 md:pt-0 md:border-0`}
+          >
             <li>
               <Link
                 to='/'
                 className={`${useActivetPath('/')}`}
+                onClick={onShowMenu}
                 title='Who we are'
               >
                 <span className='block px-4 py-1 md:p-2 lg:px-4'>
@@ -54,7 +64,7 @@ export const Menu: React.FC<IMenuProps> = (props) => {
                 </span>
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link
                 to='/projects'
                 className={`${useActivetPath('/projects')}`}
@@ -93,12 +103,13 @@ export const Menu: React.FC<IMenuProps> = (props) => {
               >
                 <span className='block px-4 py-1 md:p-2 lg:px-4'>Gallery</span>
               </Link>
-            </li>
+            </li> */}
             <li>
               <Link
                 to='/contact-us'
                 className={`${useActivetPath('/contact-us')}`}
                 title='Item 2'
+                onClick={onShowMenu}
               >
                 <span className='block px-4 py-1 md:p-2 lg:px-4'>
                   Contact Us
@@ -108,7 +119,7 @@ export const Menu: React.FC<IMenuProps> = (props) => {
             <li className='md:block hidden ml-4 relative'>
               <div className='flex px-4 py-1 items-center text-gray-500 cursor-pointer lang-bar'>
                 <FaGlobe size='18' className='mr-1' />
-                Eng <FaAngleDown className='mt-1' />
+                En {/* En <FaAngleDown className='mt-1' /> */}
               </div>
             </li>
           </ul>

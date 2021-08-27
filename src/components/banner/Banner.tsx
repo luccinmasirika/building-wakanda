@@ -1,20 +1,39 @@
 import * as React from 'react';
+import Bg from '../../assets/img/bg/bg.jpg';
+import Logo from '../../assets/img/logo.png';
+import { BiMouse } from 'react-icons/bi';
 
-interface IBannerProps {}
+interface IBannerProps {
+  state: boolean;
+}
 
-export const Banner: React.FC<IBannerProps> = (props) => {
+export const Banner: React.FC<IBannerProps> = (props: any) => {
   return (
-    <div className='container w-full flex md:mx-auto md:px-10 px-4 py-4 flex-wrap md:flex-no-wrap bg-gray-100 sticky top-0 z-0'>
-      <div className='w-full md:w-7/12 h-screen flex items-center'>
-        <div className='w-full flex pl-28 items-center justify-center'>
-          <div className='flex w-3 h-52 bg-yellow-400'></div>
-          <div className='pl-6'>
-            <h1 className='md:text-8xl text-5xl font-bold '>Building</h1>
-            <h1 className='md:text-9xl text-6xl font-bold'>WAKANDA</h1>
-          </div>
+    <div className='container sticky mx-auto top-0 z-0 pt-16 md:pt-20 bg-white'>
+      <div
+        style={{ backgroundImage: `url(${Bg})` }}
+        className='Banner container w-full mx-auto'
+      >
+        <div className='container  w-full  bg-gray-900 bg-opacity-80 flex flex-col items-center relative top-0 z-0 mx-auto'>
+          {props.state && (
+            <img
+              src={Logo}
+              alt='Logo building wakanda'
+              className='md:w-5/12 pt-32 pb-24 px-8'
+            />
+          )}
+          {!props.state && (
+            <div className='md:w-5/12 pt-32 flex items-center justify-center pb-24 px-8'>
+              <span className='text-white text-5xl'>Contact Us</span>
+            </div>
+          )}
+          {/* <BiMouse
+            color='#ffa41b'
+            size='32'
+            className='animate-bounce absolute bottom-32 md:bottom-24'
+          /> */}
         </div>
       </div>
-      <div className='hidden md:flex md:w-5/12 md:h-screen'></div>
     </div>
   );
 };

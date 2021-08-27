@@ -21,3 +21,37 @@
   position: absolute;
   background: rgba(107, 114, 128);
 }
+
+h1,
+p {
+  padding: 3rem 1em 1em;
+}
+
+p {
+  text-align: justify;
+  line-height: 1.623;
+  padding: 0.6rem;
+  font-size: large;
+}
+
+table {
+  margin-top: 40px;
+}
+
+td {
+  padding: 20px;
+}
+
+.Banner {
+  background-size: 830px;
+}
+
+@media only screen and (max-width: 768px) {
+  .Banner {
+    background-size: 600px;
+  }
+  p,
+  h1 {
+    padding: 5px 0 20px 0;
+  }
+}

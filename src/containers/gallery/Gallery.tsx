@@ -28,7 +28,6 @@ const PHOTOS = [
   Img11,
   Img5,
 ];
-const PHOTOS2 = [Img2];
 
 export const Galley: React.FC<IGalleyProps> = (props) => {
   const [isOpen, setIsOpen] = React.useState(false);

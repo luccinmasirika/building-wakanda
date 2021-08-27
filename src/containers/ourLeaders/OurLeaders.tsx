@@ -1,7 +1,5 @@
 import * as React from 'react';
-import Image1 from '../../assets/img/leaders/leader1.jpg';
 import Image2 from '../../assets/img/leaders/leader2.jpg';
-import Image3 from '../../assets/img/leaders/leader3.jpg';
 
 interface IOurLeaderProps {}
 
