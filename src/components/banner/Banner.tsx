@@ -8,12 +8,12 @@ interface IBannerProps {
 
 export const Banner: React.FC<IBannerProps> = (props: any) => {
   return (
-    <div className='container sticky mx-auto top-0 z-0 pt-16 md:pt-20 bg-white'>
+    <div className='w-full sticky mx-auto top-0 z-0 pt-16 md:pt-20 bg-white'>
       <div
         style={{ backgroundImage: `url(${Bg})` }}
-        className='Banner container w-full mx-auto'
+        className='Banner w-full mx-auto'
       >
-        <div className='container  w-full  bg-gray-900 bg-opacity-80 flex flex-col items-center relative top-0 z-0 mx-auto'>
+        <div className='w-full bg-gray-900 bg-opacity-60 flex flex-col items-center mx-auto'>
           {props.state && (
             <img
               src={Logo}

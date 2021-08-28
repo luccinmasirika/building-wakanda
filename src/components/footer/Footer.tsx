@@ -5,7 +5,7 @@ interface IFooterProps {}
 
 export const Footer: React.FC<IFooterProps> = (props) => {
   return (
-    <div className='w-full flex items-center justify-center md:h-24 bg-gray-800'>
+    <div className='w-full flex items-center justify-center md:h-24 bg-gray-800 relative z-10'>
       <div className='container flex flex-wrap-reverse md:flex-nowrap items-center justify-center md:justify-between md:px-32 mx-auto'>
         <p className='text-center text-gray-200 p-4'>
           © Building Wakanda and Designed By{' '}
