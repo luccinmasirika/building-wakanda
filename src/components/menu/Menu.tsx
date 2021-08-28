@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { CgMenuRight } from 'react-icons/cg';
-import { FaGlobe, FaAngleDown } from 'react-icons/fa';
+import { FaGlobe } from 'react-icons/fa';
 import '../../App.css';
 import Logo from '../../assets/img/logoNoir.png';
 

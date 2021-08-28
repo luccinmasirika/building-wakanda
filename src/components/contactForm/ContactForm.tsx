@@ -13,8 +13,6 @@ export const ContactForm: React.FC<IContactFormProps> = (props) => {
   });
   const [success, setSuccess] = React.useState(false);
 
-  const { firstName, lastName, email, message } = data;
-
   const handelChange = (props: any) => (event: any) => {
     setState(false);
     setData({ ...data, [props]: event.target.value });

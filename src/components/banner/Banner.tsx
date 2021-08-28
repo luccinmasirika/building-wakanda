@@ -1,7 +1,6 @@
 import * as React from 'react';
 import Bg from '../../assets/img/bg/bg.jpg';
 import Logo from '../../assets/img/logo.png';
-import { BiMouse } from 'react-icons/bi';
 
 interface IBannerProps {
   state: boolean;
