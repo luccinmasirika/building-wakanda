@@ -33,7 +33,7 @@ export const WhoWeAre: React.FC<IWhoWeAreProps> = (props) => {
           be. <strong>We first count on ourselves. </strong>We work together,
           ready to compete and to win. Baby steps after baby steps, we are
           building a temple through science, technology, engineering, art,
-          mathematics, innovation, and love
+          mathematics, innovation, and love.
         </p>
         <p>
           You can be one of us, regardless of your origin, age, race, gender,

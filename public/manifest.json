@@ -1,9 +1,9 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Building Wakanda",
+  "name": "When we say #BuildingWakanda #ForUsByUs, it is first a message of self-love. We know our history and our worth. We use science to make Africa the paradise it is supposed to be. We first count on ourselves. We work together, ready to compete and to win. Baby steps after baby steps, we are building a temple through science, technology, engineering, art, mathematics, innovation, and love",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "favicon.png",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
