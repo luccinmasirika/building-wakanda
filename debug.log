@@ -1,1 +1,4 @@
 [0828/081125.294:ERROR:directory_reader_win.cc(43)] FindFirstFile: Le chemin d’accès spécifié est introuvable. (0x3)
+[0828/174325.421:ERROR:process_reader_win.cc(151)] SuspendThread: Accès refusé. (0x5)
+[0828/174325.423:ERROR:exception_snapshot_win.cc(99)] thread ID 22716 not found in process
+[0828/174325.424:ERROR:scoped_process_suspend.cc(40)] NtResumeProcess: Tentative d’accès à un processus en cours d’arrêt. (0xc000010a)
