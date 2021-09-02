@@ -21,7 +21,11 @@ export const WhoWeAre: React.FC<IWhoWeAreProps> = (props) => {
   return (
     <div className='w-full bg-gray-50 relative z-10 '>
       <div className='container flex flex-col md:mx-auto  p-4 md:px-32 py-4 items-center md:flex-no-wrap'>
-        <div dangerouslySetInnerHTML={{ __html: data }} />
+        {data ? (
+          <div dangerouslySetInnerHTML={{ __html: data }} />
+        ) : (
+          <h1>Loading...</h1>
+        )}
 
         <div className='w-full flex items-center justify-center px-4 py-8'>
           <Link
