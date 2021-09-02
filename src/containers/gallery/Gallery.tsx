@@ -79,9 +79,6 @@ export const Galley: React.FC<IGalleyProps> = (props) => {
       </div>
       <div className='w-full bg-gray-100 h-40 transform -skew-y-2 translate-y-28 z-0'></div>
       <div className='w-full bg-gray-100 py-24'>
-        {/* <div className='w-full bg-gray-100 flex justify-center relative transform -translate-y-16 pb-10 z-20'>
-          <h1 className='text-6xl'>Video galley</h1>
-        </div> */}
         <div className='grid grid-cols-1 md:grid-cols-3 gap-4 md:mx-44 px-3 z-1'>
           {Array(12)
             .fill(null)
