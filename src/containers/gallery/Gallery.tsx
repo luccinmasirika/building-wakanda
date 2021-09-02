@@ -39,9 +39,6 @@ export const Galley: React.FC<IGalleyProps> = (props) => {
         photos={PHOTOS}
         onClose={() => setIsOpen(false)}
       />
-      {/* <div className='w-full flex justify-center relative py-12 z-20'>
-        <h1 className='text-6xl'>Image galley</h1>
-      </div> */}
       <div className='flex w-full md:p-12 p-4 md:justify-center px-4 overflow-auto'>
         <div className='rounded-full py-3 flex justify-center items-center px-8 mx-3 cursor-pointer bg-gray-700 font-bold text-white active:bg-gray-500'>
           X Photos
