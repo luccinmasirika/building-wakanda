@@ -13,7 +13,7 @@ export const OurLeaders: React.FC<IOurLeaderProps> = (props) => {
       <div className='w-ful relative z-10 bg-white py-10 md:px-16'>
         <h1>People</h1>
         <div className='container flex p-4 flex-wrap justify-center'>
-          {Array(4)
+          {Array(6)
             .fill(null)
             .map((x, y) => (
               <div className='w-full md:w-4/12 flex items-center my-8 justify-center'>

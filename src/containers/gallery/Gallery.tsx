@@ -44,20 +44,20 @@ export const Galley: React.FC<IGalleyProps> = (props) => {
       </div> */}
       <div className='flex w-full md:p-12 p-4 md:justify-center px-4 overflow-auto'>
         <div className='rounded-full py-3 flex justify-center items-center px-8 mx-3 cursor-pointer bg-gray-700 font-bold text-white active:bg-gray-500'>
-          Naruto
+          X Photos
         </div>
         <div className='rounded-full py-3 flex justify-center items-center px-8 mx-3 cursor-pointer bg-gray-200 hover:bg-yellow-300 active:bg-gray-500'>
-          Sasuke
+          Y Photos
         </div>
         <div className='rounded-full py-3 flex justify-center items-center px-8 mx-3 cursor-pointer bg-gray-200 hover:bg-yellow-300 active:bg-gray-500'>
-          Kakashi
+          Z Photos
         </div>
         <div className='rounded-full py-3 flex justify-center items-center px-8 mx-3 cursor-pointer bg-gray-200 hover:bg-yellow-300 active:bg-gray-500'>
-          Obito
+          Others
         </div>
         <div
           onClick={() => setIsOpen(true)}
-          className='rounded-full py-3 flex flex-nowrap justify-center items-center px-8 mx-3 cursor-pointer bg-gray-200 hover:bg-yellow-300 active:bg-gray-500'
+          className='rounded-full py-3 flex flex-nowrap justify-center items-center px-8 mx-3 cursor-pointer bg-yellow-300 hover:bg-yellow-300 active:bg-gray-500'
         >
           All
         </div>
