@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { CgMenuRight } from 'react-icons/cg';
-import { FaGlobe } from 'react-icons/fa';
+import { FaGlobe, FaAngleDown } from 'react-icons/fa';
 import '../../App.css';
 import Logo from '../../assets/img/logoNoir.png';
 
@@ -64,22 +64,23 @@ export const Menu: React.FC<IMenuProps> = (props) => {
                 </span>
               </Link>
             </li>
-            {/* <li>
+            <li>
               <Link
-                to='/projects'
-                className={`${useActivetPath('/projects')}`}
-                title='Item 1'
+                to='/our-projects'
+                className={`${useActivetPath('/our-projects')}`}
+                title='Our Projects'
               >
                 <span className='flex items-center px-4 py-1 md:p-2 lg:px-4'>
                   Projects <FaAngleDown className='mt-1' />
                 </span>
               </Link>
             </li>
+
             <li>
               <Link
                 to='/our-leaders'
                 className={`${useActivetPath('/our-leaders')}`}
-                title='Item 2'
+                title='Our Leaders'
               >
                 <span className='block px-4 py-1 md:p-2 lg:px-4'>
                   Our Leaders
@@ -90,7 +91,7 @@ export const Menu: React.FC<IMenuProps> = (props) => {
               <Link
                 to='/blog'
                 className={`${useActivetPath('/blog')}`}
-                title='Item 2'
+                title='Blog'
               >
                 <span className='block px-4 py-1 md:p-2 lg:px-4'>Blog</span>
               </Link>
@@ -99,16 +100,16 @@ export const Menu: React.FC<IMenuProps> = (props) => {
               <Link
                 to='/gallery'
                 className={`${useActivetPath('/gallery')}`}
-                title='Item 2'
+                title='Gallery'
               >
                 <span className='block px-4 py-1 md:p-2 lg:px-4'>Gallery</span>
               </Link>
-            </li> */}
+            </li>
             <li>
               <Link
                 to='/contact-us'
                 className={`${useActivetPath('/contact-us')}`}
-                title='Item 2'
+                title='Contact Us'
                 onClick={onShowMenu}
               >
                 <span className='block px-4 py-1 md:p-2 lg:px-4'>

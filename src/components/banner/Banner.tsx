@@ -4,9 +4,10 @@ import Logo from '../../assets/img/logo.png';
 
 interface IBannerProps {
   state: boolean;
+  title?: string;
 }
 
-export const Banner: React.FC<IBannerProps> = (props: any) => {
+export const Banner: React.FC<IBannerProps> = (props) => {
   return (
     <div className='w-full sticky mx-auto top-0 z-0 pt-16 md:pt-20 bg-white'>
       <div
@@ -23,7 +24,7 @@ export const Banner: React.FC<IBannerProps> = (props: any) => {
           )}
           {!props.state && (
             <div className='md:w-5/12 pt-32 flex items-center justify-center pb-24 px-8'>
-              <span className='text-white text-5xl'>Contact Us</span>
+              <span className='text-white text-5xl'>{props.title}</span>
             </div>
           )}
           {/* <BiMouse

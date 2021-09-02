@@ -4,6 +4,6 @@ interface ILatestProps {}
 
 export const Latest: React.FC<ILatestProps> = () => {
   return (
-    <div className='container w-full h-full mt-12 flex flex-col bg-gray-400 rounded-sm'></div>
+    <div className='container w-full h-full mt-12 flex flex-col bg-gray-100 rounded-sm'></div>
   );
 };
