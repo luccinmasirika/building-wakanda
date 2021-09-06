@@ -1,1 +1,1 @@
-export { Latest } from './Latest';
+export { ArticleCard } from './ArticleCard';

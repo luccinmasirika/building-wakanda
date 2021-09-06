@@ -12,7 +12,7 @@ export const onGetData = async (url: string) => {
       },
     });
     return response.data;
-  } catch (error) {
+  } catch (error: any) {
     if (error.response) {
       return error.response.data;
     }

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { CgMenuRight } from 'react-icons/cg';
-import { FaGlobe, FaAngleDown } from 'react-icons/fa';
+import { FaGlobe } from 'react-icons/fa';
 import '../../App.css';
 import Logo from '../../assets/img/logoNoir.png';
 
@@ -71,7 +71,7 @@ export const Menu: React.FC<IMenuProps> = (props) => {
                 title='Our Projects'
               >
                 <span className='flex items-center px-4 py-1 md:p-2 lg:px-4'>
-                  Projects <FaAngleDown className='mt-1' />
+                  Projects
                 </span>
               </Link>
             </li>
