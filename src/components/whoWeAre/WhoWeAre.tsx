@@ -24,7 +24,27 @@ export const WhoWeAre: React.FC<IWhoWeAreProps> = (props) => {
         {data ? (
           <div dangerouslySetInnerHTML={{ __html: data }} />
         ) : (
-          <h1>Loading...</h1>
+          <div className='container flex flex-col'>
+            <div className='w-8/12 my-6 h-6 rounded-3xl bg-gray-300 animate-pulse'></div>
+            {Array(7)
+              .fill(null)
+              .map((x, y) => (
+                <div
+                  key={y}
+                  className='w-full my-2 h-4 rounded-3xl bg-gray-300 animate-pulse'
+                ></div>
+              ))}
+
+            <div className='w-8/12 my-6 h-6 rounded-3xl bg-gray-300 animate-pulse'></div>
+            {Array(7)
+              .fill(null)
+              .map((x, y) => (
+                <div
+                  key={y}
+                  className='w-full my-2 h-4 rounded-3xl bg-gray-300 animate-pulse'
+                ></div>
+              ))}
+          </div>
         )}
 
         <div className='w-full flex items-center justify-center px-4 py-8'>

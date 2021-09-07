@@ -44,41 +44,37 @@ export const Blog: React.FC<IBlogProps> = (props) => {
         <div className='container w-full flex flex-wrap p-4 md:px-32 h-auto bg-white relative z-10 py-4  mx-auto'>
           <h4 className='text-4xl mx-2 my-12'>Most popular</h4>
           <div className='w-full flex mb-8 flex-wrap md:flex-nowrap'>
-            {popular.map((x: IData, y: number) => {
-              if (popular.length > 1) {
-                return (
+            {popular.length > 1
+              ? popular.map((x: IData, y: number) => (
                   <div className='w-full md:w-2/4 mx-2 rounded-lg' key={y}>
                     <ArticleCard data={x} />
                   </div>
-                );
-              } else {
-                return (
-                  <div className='w-full md:w-2/4 mx-2 rounded-lg' key={y}>
-                    <div className='w-full h-80 bg-gray-200 animate-pulse rounded-lg'></div>
-                  </div>
-                );
-              }
-            })}
+                ))
+              : Array(2)
+                  .fill(null)
+                  .map((x, y) => (
+                    <div className='w-full md:w-2/4 mx-2 rounded-lg' key={y}>
+                      <div className='w-full h-80 bg-gray-300 animate-pulse rounded-lg'></div>
+                    </div>
+                  ))}
           </div>
           <div className='w-full flex flex-wrap md:flex-nowrap'>
             <div className='w-full mx-2'>
               <h4 className='text-4xl mx-2 my-12'>Latest posts</h4>
               <div className='grid grid-cols-1 md:grid-cols-3 gap-3'>
-                {blog.map((x: IData, y) => {
-                  if (popular.length > 1) {
-                    return (
+                {blog.length > 1
+                  ? blog.map((x: IData, y: number) => (
                       <div className='w-full rounded-lg' key={y}>
                         <ArticleCard data={x} />
                       </div>
-                    );
-                  } else {
-                    return (
-                      <div className='w-full rounded-lg' key={y}>
-                        <div className='w-full h-80 bg-gray-200 animate-pulse rounded-lg'></div>
-                      </div>
-                    );
-                  }
-                })}
+                    ))
+                  : Array(6)
+                      .fill(null)
+                      .map((x, y) => (
+                        <div className='w-full rounded-lg' key={y}>
+                          <div className='w-full h-80 bg-gray-300 animate-pulse rounded-lg'></div>
+                        </div>
+                      ))}
               </div>
             </div>
           </div>

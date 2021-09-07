@@ -30,14 +30,25 @@ export const BlogPage: React.FC<IBlogPageProps> = (props) => {
 
   return (
     <>
-      <Banner state={false} title={data.title} />
+      <Banner state={false} title='Blog' />
       <div className='w-ful relative z-10 bg-white'>
         <div className='container p-4 md:py-12 md:mx-auto md:px-32 py-4'>
-          <img
-            src={`${API}/${data.image}`}
-            alt='Ima'
-            className='w-full mt-10'
-          />
+          {data.title ? (
+            <h1>{data.title}</h1>
+          ) : (
+            <div className='w-full mt-10 h-8 rounded-3xl bg-gray-300 animate-pulse'></div>
+          )}
+          {data.image ? (
+            <div className='w-full bg-gray-300' style={{ minHeight: 700 }}>
+              <img
+                src={`${API}/${data.image}`}
+                alt='Ima'
+                className='w-full mt-10'
+              />
+            </div>
+          ) : (
+            <div className='w-full mt-10 h-96 bg-gray-300 animate-pulse'></div>
+          )}
           <div className='w-full flex justify-between bg-gradient-to-b from-gray-100 py-4 mb-5'>
             <span className='mx-2 text-gray-400 flex items-center text-sm'>
               <FaEye className='text-gray-400 mx-2' /> {data.visites} times
@@ -48,7 +59,20 @@ export const BlogPage: React.FC<IBlogPageProps> = (props) => {
               {dayjs(data.createdAt).format('dddd, YYYY MMM DD')}
             </div>
           </div>
-          <span dangerouslySetInnerHTML={{ __html: data.content }} />
+
+          {data.content ? (
+            <span
+              className='md:px-28'
+              dangerouslySetInnerHTML={{ __html: data.content }}
+            />
+          ) : (
+            <div className=''>
+              <div className='w-full mt-10 h-8 rounded-3xl bg-gray-300 animate-pulse'></div>
+              <div className='w-full mt-10 h-8 rounded-3xl bg-gray-300 animate-pulse'></div>
+              <div className='w-full mt-10 h-8 rounded-3xl bg-gray-300 animate-pulse'></div>
+              <div className='w-full mt-10 h-8 rounded-3xl bg-gray-300 animate-pulse'></div>
+            </div>
+          )}
           <div className='w-full flex items-center justify-center px-4 py-8'>
             <Link
               to='/blog'
