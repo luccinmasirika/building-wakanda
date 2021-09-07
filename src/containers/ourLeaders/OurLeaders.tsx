@@ -1,6 +1,4 @@
 import * as React from 'react';
-import { FaUserCircle } from 'react-icons/fa';
-import Image2 from '../../assets/img/leaders/leader2.jpg';
 import { Banner } from './../../components/banner';
 import { CardUn } from './CardUn';
 import { onGetData } from './../../api/index';
@@ -51,8 +49,8 @@ export const OurLeaders: React.FC<IOurLeaderProps> = (props) => {
             <div className='container flex p-4 flex-wrap justify-center'>
               {people &&
                 people.map((x: ICardBody, y: number) => (
-                  <div className='w-full md:w-4/12 flex items-center my-8 justify-center'>
-                    <CardUn key={y} data={x} />
+                  <div key={y} className='w-full md:w-4/12 flex items-center my-8 justify-center'>
+                    <CardUn  data={x} />
                   </div>
                 ))}
             </div>
@@ -64,8 +62,8 @@ export const OurLeaders: React.FC<IOurLeaderProps> = (props) => {
             <h4 className='text-4xl text-center my-4'>Organisation</h4>
             <div className='container flex p-4 flex-wrap justify-center'>
               {organisation.map((x: ICardBody, y: number) => (
-                <div className='w-full md:w-4/12 flex items-center my-8 justify-center'>
-                  <CardUn key={y} data={x} />
+                <div  key={y} className='w-full md:w-4/12 flex items-center my-8 justify-center'>
+                  <CardUn data={x} />
                 </div>
               ))}
             </div>
@@ -77,8 +75,8 @@ export const OurLeaders: React.FC<IOurLeaderProps> = (props) => {
             <h4 className='text-4xl text-center my-4'>People we love</h4>
             <div className='container flex p-4 flex-wrap justify-center'>
               {peopleWeLove.map((x: ICardBody, y: number) => (
-                <div className='w-full md:w-4/12 flex items-center my-8 justify-center'>
-                  <CardUn key={y} data={x} />
+                <div key={y} className='w-full md:w-4/12 flex items-center my-8 justify-center'>
+                  <CardUn  data={x} />
                 </div>
               ))}
             </div>
@@ -90,8 +88,8 @@ export const OurLeaders: React.FC<IOurLeaderProps> = (props) => {
             <h4 className='text-4xl text-center my-4'>Team Members</h4>
             <div className='container flex p-4 flex-wrap justify-center'>
               {team.map((x: ICardBody, y: number) => (
-                <div className='w-full md:w-4/12 flex items-center my-8 justify-center'>
-                  <CardUn key={y} data={x} />
+                <div key={y} className='w-full md:w-4/12 flex items-center my-8 justify-center'>
+                  <CardUn  data={x} />
                 </div>
               ))}
             </div>
@@ -103,8 +101,8 @@ export const OurLeaders: React.FC<IOurLeaderProps> = (props) => {
             <h4 className='text-4xl text-center my-4'>Anonyme</h4>
             <div className='container flex p-4 flex-wrap justify-center'>
               {anonyme.map((x: ICardBody, y: number) => (
-                <div className='w-full md:w-4/12 flex items-center my-8 justify-center'>
-                  <CardUn key={y} data={x} />
+                <div  key={y} className='w-full md:w-4/12 flex items-center my-8 justify-center'>
+                  <CardUn data={x} />
                 </div>
               ))}
             </div>

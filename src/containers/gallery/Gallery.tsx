@@ -29,6 +29,7 @@ export const Galley: React.FC<IGalleyProps> = (props) => {
 
   React.useEffect(() => {
     loadData();
+    // eslint-disable-next-line
   }, []);
 
   return (
@@ -41,26 +42,7 @@ export const Galley: React.FC<IGalleyProps> = (props) => {
           activePhotoIndex={active}
           onClose={() => setIsOpen(false)}
         />
-        <div className='flex w-full md:p-12 p-4 md:justify-center px-4 overflow-auto'>
-          {/* <div className='rounded-full py-3 flex justify-center items-center px-8 mx-3 cursor-pointer bg-gray-700 font-bold text-white active:bg-gray-500'>
-       X Photos
-     </div>
-     <div className='rounded-full py-3 flex justify-center items-center px-8 mx-3 cursor-pointer bg-gray-200 hover:bg-yellow-300 active:bg-gray-500'>
-       Y Photos
-     </div>
-     <div className='rounded-full py-3 flex justify-center items-center px-8 mx-3 cursor-pointer bg-gray-200 hover:bg-yellow-300 active:bg-gray-500'>
-       Z Photos
-     </div>
-     <div className='rounded-full py-3 flex justify-center items-center px-8 mx-3 cursor-pointer bg-gray-200 hover:bg-yellow-300 active:bg-gray-500'>
-       Others
-     </div>
-     <div
-       onClick={() => setIsOpen(true)}
-       className='rounded-full py-3 flex flex-nowrap justify-center items-center px-8 mx-3 cursor-pointer bg-yellow-300 hover:bg-yellow-300 active:bg-gray-500'
-     >
-       All
-     </div> */}
-        </div>
+        <div className='flex w-full md:p-12 p-4 md:justify-center px-4 overflow-auto'></div>
         <div className='grid grid-cols-1 md:grid-cols-4 gap-4 md:mx-44 px-3'>
           {gallery && gallery.images.length > 1
             ? gallery.images.map((x, y) => {
@@ -82,6 +64,7 @@ export const Galley: React.FC<IGalleyProps> = (props) => {
                     </div>
                   );
                 }
+                return false;
               })
             : Array(12)
                 .fill(null)
@@ -118,6 +101,7 @@ export const Galley: React.FC<IGalleyProps> = (props) => {
                       />
                     );
                   }
+                  return false;
                 })
               : Array(12)
                   .fill(null)

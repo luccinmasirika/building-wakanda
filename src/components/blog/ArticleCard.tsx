@@ -25,8 +25,8 @@ export const ArticleCard: React.FC<IArticleCardProps> = (props) => {
   return (
     <Link to={`/blog/${props.data._id}`}>
       <div className='w-full cursor-pointer shadow-lg rounded-lg'>
-        <div className='flex relative'>
-          <div className='bg-gray-900 w-full h-72 relative'>
+        <div className='flex relative rounded-lg'>
+          <div className='bg-gray-900 w-full h-72 relative rounded-lg'>
             <img
               src={`${API}/${props.data.image}`}
               alt='img'

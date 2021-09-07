@@ -25,6 +25,7 @@ export const BlogPage: React.FC<IBlogPageProps> = (props) => {
 
   React.useEffect(() => {
     onLoadData();
+    // eslint-disable-next-line
   }, []);
 
   return (

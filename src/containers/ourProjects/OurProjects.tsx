@@ -30,6 +30,7 @@ export const OurProjects: React.FunctionComponent<IOurProjectsProps> = ({
 
   React.useEffect(() => {
     loadData();
+    // eslint-disable-next-line
   }, []);
 
   return (

@@ -30,6 +30,7 @@ export const Blog: React.FC<IBlogProps> = (props) => {
 
   React.useEffect(() => {
     loadData();
+    // eslint-disable-next-line
   }, [limit]);
 
   React.useEffect(() => {
@@ -46,13 +47,13 @@ export const Blog: React.FC<IBlogProps> = (props) => {
             {popular.map((x: IData, y: number) => {
               if (popular.length > 1) {
                 return (
-                  <div className='w-full md:w-2/4 mx-2' key={y}>
+                  <div className='w-full md:w-2/4 mx-2 rounded-lg' key={y}>
                     <ArticleCard data={x} />
                   </div>
                 );
               } else {
                 return (
-                  <div className='w-full md:w-2/4 mx-2' key={y}>
+                  <div className='w-full md:w-2/4 mx-2 rounded-lg' key={y}>
                     <div className='w-full h-80 bg-gray-200 animate-pulse rounded-lg'></div>
                   </div>
                 );
@@ -66,13 +67,13 @@ export const Blog: React.FC<IBlogProps> = (props) => {
                 {blog.map((x: IData, y) => {
                   if (popular.length > 1) {
                     return (
-                      <div className='w-full' key={y}>
+                      <div className='w-full rounded-lg' key={y}>
                         <ArticleCard data={x} />
                       </div>
                     );
                   } else {
                     return (
-                      <div className='w-full' key={y}>
+                      <div className='w-full rounded-lg' key={y}>
                         <div className='w-full h-80 bg-gray-200 animate-pulse rounded-lg'></div>
                       </div>
                     );

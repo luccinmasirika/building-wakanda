@@ -21,6 +21,7 @@ export const ProjectsPage: React.FC<IProjectPageProps> = (props) => {
 
   React.useEffect(() => {
     onLoadData();
+    // eslint-disable-next-line
   }, []);
   return (
     <>
