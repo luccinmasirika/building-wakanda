@@ -15,9 +15,9 @@ export const Footer: React.FC<IFooterProps> = (props) => {
             rel='noreferrer'
             className='text-yellow-400 underline'
           >
-            Uptodate Deelopers
+            Uptodate Developers
           </a>
-          , All rights reserved
+          , All rights reserved.
         </p>
         <div className='flex items-center p-4'>
           <div className='flex rounded-full cursor-pointer items-center justify-center w-8 h-8 mx-3 bg-gray-300'>

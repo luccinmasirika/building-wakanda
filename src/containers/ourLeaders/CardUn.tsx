@@ -15,14 +15,18 @@ export const CardUn: React.FC<ICardUnProps> = (props) => {
         src={`${API}/${props.data.image}`}
         alt='Mountain'
       />
-      <div className='px-6 py-4'>
-        <h2 className='font-bold text-xl mb-2'>{props.data.name}</h2>
-        <span
-          className='text-gray-700'
+      <div className='py-6'>
+        {props.data.role && (
+          <div className='font-bold px-6 text-sm'>{props.data.role}</div>
+        )}
+        <h4 className='font-bold text-xl px-6'>{props.data.name}</h4>
+        <div
+          className='text-gray-700 px-4'
           dangerouslySetInnerHTML={{ __html: props.data.content }}
         />
+        <hr />
       </div>
-      <div className='px-4 pt-4 pb-6 flex'>
+      <div className='px-4 pb-6 flex'>
         <div className='flex rounded-full cursor-pointer items-center justify-center w-8 h-8 mx-3 bg-gray-300'>
           <a href={props.data.twitter} target='_blank' rel='noreferrer'>
             <FaTwitter />

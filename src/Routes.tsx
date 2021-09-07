@@ -24,7 +24,7 @@ const Routes: React.FC = () => {
         <Route exact path='/gallery' component={Galley} />
         <Route exact path='/our-projects' component={OurProjects} />
         <Route exact path='/our-projects/:id' component={ProjectsPage} />
-        <Route exact path='/our-leaders' component={OurLeaders} />
+        <Route exact path='/our-team' component={OurLeaders} />
         <Route exact path='/contact-us' component={ContactUs} />
         <Route exact path='/blog' component={Blog} />
         <Route exact path='/blog/:id' component={BlogPage} />

@@ -3,6 +3,10 @@ import { Banner } from '../../components/banner';
 import { useLocation, Link } from 'react-router-dom';
 import { onGetData } from '../../api';
 import { API } from '../../config';
+import { FaEye, FaClock } from 'react-icons/fa';
+import dayjs from 'dayjs';
+// dayjs format
+dayjs().format();
 
 interface IBlogPageProps {}
 
@@ -13,7 +17,7 @@ export const BlogPage: React.FC<IBlogPageProps> = (props) => {
 
   const onLoadData = async () => {
     const _id = location.pathname.split('/blog/')[1];
-    const data = await onGetData(`/get/blog/?_id=${_id}`);
+    const data = await onGetData(`/get/blog/?_id=${_id}&client=${true}`);
     if (data && !data.error) {
       setData(data);
     }
@@ -31,14 +35,24 @@ export const BlogPage: React.FC<IBlogPageProps> = (props) => {
           <img
             src={`${API}/${data.image}`}
             alt='Ima'
-            className='mx-auto my-10'
+            className='w-full mt-10'
           />
+          <div className='w-full flex justify-between bg-gradient-to-b from-gray-100 py-4 mb-5'>
+            <span className='mx-2 text-gray-400 flex items-center text-sm'>
+              <FaEye className='text-gray-400 mx-2' /> {data.visites} times
+            </span>
+            <span className='mx-2 text-gray-400 hidden md:flex'>-</span>
+            <div className='mx-2 text-gray-400 flex items-center text-sm'>
+              <FaClock className='text-gray-400  mx-2' />
+              {dayjs(data.createdAt).format('dddd, YYYY MMM DD')}
+            </div>
+          </div>
           <span dangerouslySetInnerHTML={{ __html: data.content }} />
           <div className='w-full flex items-center justify-center px-4 py-8'>
             <Link
               to='/blog'
               title='Join Us'
-              className='w-32 text-white flex items-center justify-center bg-black p-4'
+              className='rounded-full py-3 flex flex-nowrap justify-center items-center px-8 mx-3 cursor-pointer text-white bg-gray-900 hover:bg-yellow-500 active:bg-gray-500'
             >
               Go back
             </Link>

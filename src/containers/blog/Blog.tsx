@@ -1,14 +1,14 @@
 import * as React from 'react';
-import { Link } from 'react-router-dom';
 import { onGetData } from './../../api/index';
 import { ArticleCard } from '../../components/blog/ArticleCard';
 import { IData } from '../../components/blog/ArticleCard';
+import { Banner } from '../../components/banner';
 
 interface IBlogProps {}
 
 export const Blog: React.FC<IBlogProps> = (props) => {
   const [blog, setBlog] = React.useState([]);
-  const [popular, setPopular] = React.useState([]);
+  const [popular, setPopular] = React.useState<any>([]);
   const [limit, setLimit] = React.useState(9);
   const [loading, setLoading] = React.useState(false);
 
@@ -37,43 +37,64 @@ export const Blog: React.FC<IBlogProps> = (props) => {
   }, []);
 
   return (
-    <div className='container w-full flex flex-wrap p-4 md:px-32 h-auto bg-white relative z-10 py-20  mx-auto'>
-      <h2 className='text-4xl mx-2 mt-12'>Most popular</h2>
-      <div className='w-full flex mb-8 flex-wrap md:flex-nowrap'>
-        {popular.map((x: IData, y: number) => (
-          <div className='w-full md:w-2/4 mx-2' key={y}>
-            <Link to={`/blog/${x._id}`}>
-              <ArticleCard data={x} />
-            </Link>
+    <>
+      <Banner state={false} title='Blog' />
+      <div className='w-ful relative z-10 bg-white'>
+        <div className='container w-full flex flex-wrap p-4 md:px-32 h-auto bg-white relative z-10 py-4  mx-auto'>
+          <h4 className='text-4xl mx-2 my-12'>Most popular</h4>
+          <div className='w-full flex mb-8 flex-wrap md:flex-nowrap'>
+            {popular.map((x: IData, y: number) => {
+              if (popular.length > 1) {
+                return (
+                  <div className='w-full md:w-2/4 mx-2' key={y}>
+                    <ArticleCard data={x} />
+                  </div>
+                );
+              } else {
+                return (
+                  <div className='w-full md:w-2/4 mx-2' key={y}>
+                    <div className='w-full h-80 bg-gray-200 animate-pulse rounded-lg'></div>
+                  </div>
+                );
+              }
+            })}
           </div>
-        ))}
-      </div>
-      <div className='w-full flex flex-wrap md:flex-nowrap'>
-        <div className='w-full mx-2'>
-          <h2 className='text-4xl mx-2 mt-12'>Latest posts</h2>
-          <div className='grid grid-cols-1 md:grid-cols-3 gap-3'>
-            {blog.map((x: IData, y) => (
-              <div className='w-full' key={y}>
-                <Link to={`/blog/${x._id}`}>
-                  <ArticleCard data={x} />
-                </Link>
+          <div className='w-full flex flex-wrap md:flex-nowrap'>
+            <div className='w-full mx-2'>
+              <h4 className='text-4xl mx-2 my-12'>Latest posts</h4>
+              <div className='grid grid-cols-1 md:grid-cols-3 gap-3'>
+                {blog.map((x: IData, y) => {
+                  if (popular.length > 1) {
+                    return (
+                      <div className='w-full' key={y}>
+                        <ArticleCard data={x} />
+                      </div>
+                    );
+                  } else {
+                    return (
+                      <div className='w-full' key={y}>
+                        <div className='w-full h-80 bg-gray-200 animate-pulse rounded-lg'></div>
+                      </div>
+                    );
+                  }
+                })}
               </div>
-            ))}
+            </div>
           </div>
+          {blog.length > 1 && (
+            <div className='flex container w-full items-center justify-center p-16'>
+              <button
+                onClick={() => {
+                  setLimit(limit + 6);
+                }}
+                className='rounded-full py-3 flex flex-nowrap justify-center items-center px-8 mx-3 cursor-pointer text-white bg-gray-900 hover:bg-yellow-500 active:bg-gray-500'
+              >
+                {loading ? 'Loading...' : 'Load More'}
+              </button>
+            </div>
+          )}
         </div>
       </div>
-      {blog.length > 9 && (
-        <div className='flex container w-full items-center justify-center p-16'>
-          <button
-            onClick={() => {
-              setLimit(limit + 6);
-            }}
-            className='p-4 bg-gray-900 text-white'
-          >
-            {loading ? 'Loading...' : 'Load More'}
-          </button>
-        </div>
-      )}
-    </div>
+    </>
   );
 };

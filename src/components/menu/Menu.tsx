@@ -69,6 +69,7 @@ export const Menu: React.FC<IMenuProps> = (props) => {
                 to='/our-projects'
                 className={`${useActivetPath('/our-projects')}`}
                 title='Our Projects'
+                onClick={onShowMenu}
               >
                 <span className='flex items-center px-4 py-1 md:p-2 lg:px-4'>
                   Projects
@@ -78,13 +79,12 @@ export const Menu: React.FC<IMenuProps> = (props) => {
 
             <li>
               <Link
-                to='/our-leaders'
-                className={`${useActivetPath('/our-leaders')}`}
-                title='Our Leaders'
+                to='/our-team'
+                className={`${useActivetPath('/our-team')}`}
+                title='Our team'
+                onClick={onShowMenu}
               >
-                <span className='block px-4 py-1 md:p-2 lg:px-4'>
-                  Our Leaders
-                </span>
+                <span className='block px-4 py-1 md:p-2 lg:px-4'>Our team</span>
               </Link>
             </li>
             <li>
@@ -92,6 +92,7 @@ export const Menu: React.FC<IMenuProps> = (props) => {
                 to='/blog'
                 className={`${useActivetPath('/blog')}`}
                 title='Blog'
+                onClick={onShowMenu}
               >
                 <span className='block px-4 py-1 md:p-2 lg:px-4'>Blog</span>
               </Link>
@@ -101,6 +102,7 @@ export const Menu: React.FC<IMenuProps> = (props) => {
                 to='/gallery'
                 className={`${useActivetPath('/gallery')}`}
                 title='Gallery'
+                onClick={onShowMenu}
               >
                 <span className='block px-4 py-1 md:p-2 lg:px-4'>Gallery</span>
               </Link>

@@ -18,150 +18,95 @@ export interface ICardBody {
 }
 
 export const OurLeaders: React.FC<IOurLeaderProps> = (props) => {
-  const [data, setData] = React.useState<[]>([]);
-  const [isShow, setIsShow] = React.useState({
-    people: false,
-    organisation: false,
-    team: false,
-    anonyme: false,
-    peopleWeLove: false,
-  });
+  const [people, setPeople] = React.useState<[]>([]);
+  const [organisation, setOrganisation] = React.useState<[]>([]);
+  const [peopleWeLove, setpeopleWeLove] = React.useState<[]>([]);
+  const [anonyme, setAnonyme] = React.useState<[]>([]);
+  const [team, setTeam] = React.useState<[]>([]);
 
   const onLoadData = async () => {
-    const data = await onGetData('/get/all/people');
-    data.map((x: ICardBody) => {
-      if (x.type === 'People') {
-        console.log(x.type === 'People');
-        setIsShow({ ...isShow, people: true });
-      }
-      if (x.type === 'Organisation') {
-        console.log(x.type === 'Organisation');
-        setIsShow({ ...isShow, organisation: true });
-      }
-      if (x.type === 'People we love') {
-        console.log(x.type === 'People we love');
-        setIsShow({ ...isShow, peopleWeLove: true });
-      }
-      if (x.type === 'Team Member') {
-        console.log(x.type === 'Team Member', 'team');
-        setIsShow({ ...isShow, team: true });
-      }
-      if (x.type === 'Anonyme') {
-        console.log(x.type === 'Anonyme');
-        setIsShow({ ...isShow, anonyme: true });
-      }
-    });
-    setData(data);
+    const people = await onGetData('/get/all/people?type=People');
+    setPeople(people);
+    const peopleWeLove = await onGetData('/get/all/people?type=People We Love');
+    setpeopleWeLove(peopleWeLove);
+    const team = await onGetData('/get/all/people?type=Team Member');
+    setTeam(team);
+    const organisation = await onGetData('/get/all/people?type=Organisation');
+    setOrganisation(organisation);
+    const anonyme = await onGetData('/get/all/people?type=Anonyme');
+    setAnonyme(anonyme);
   };
 
   React.useEffect(() => {
     onLoadData();
   }, []);
+
   return (
     <>
-      <Banner state={false} title='Our Leaders' />
+      <Banner state={false} title='Our Team' />
       <div className='w-ful relative z-10 bg-white py-10 md:px-16'>
-        {isShow.people && (
+        {people.length > 0 && (
           <>
-            <h1>People</h1>
+            <h4 className='text-4xl text-center my-4'>People</h4>
             <div className='container flex p-4 flex-wrap justify-center'>
-              {data &&
-                data.map((x: ICardBody, y: number) => {
-                  if (x.type === 'People') {
-                    return (
-                      <div className='w-full md:w-4/12 flex items-center my-8 justify-center'>
-                        <CardUn key={y} data={x} />
-                      </div>
-                    );
-                  }
-                  return (
-                    <div className='w-full md:w-4/12 flex items-center my-8 justify-center'></div>
-                  );
-                })}
+              {people &&
+                people.map((x: ICardBody, y: number) => (
+                  <div className='w-full md:w-4/12 flex items-center my-8 justify-center'>
+                    <CardUn key={y} data={x} />
+                  </div>
+                ))}
             </div>
           </>
         )}
 
-        {isShow.organisation && (
+        {organisation.length > 0 && (
           <>
-            <h1>Organisation</h1>
+            <h4 className='text-4xl text-center my-4'>Organisation</h4>
             <div className='container flex p-4 flex-wrap justify-center'>
-              {data &&
-                data.map((x: ICardBody, y: number) => {
-                  if (x.type === 'Organisation') {
-                    return (
-                      <div className='w-full md:w-4/12 flex items-center my-8 justify-center'>
-                        <CardUn key={y} data={x} />
-                      </div>
-                    );
-                  }
-                  return (
-                    <div className='w-full md:w-4/12 flex items-center my-8 justify-center'></div>
-                  );
-                })}
+              {organisation.map((x: ICardBody, y: number) => (
+                <div className='w-full md:w-4/12 flex items-center my-8 justify-center'>
+                  <CardUn key={y} data={x} />
+                </div>
+              ))}
             </div>
           </>
         )}
 
-        {isShow.peopleWeLove && (
+        {peopleWeLove.length > 0 && (
           <>
-            <h1>People we love</h1>
+            <h4 className='text-4xl text-center my-4'>People we love</h4>
             <div className='container flex p-4 flex-wrap justify-center'>
-              {data &&
-                data.map((x: ICardBody, y: number) => {
-                  if (x.type === 'People We Love') {
-                    return (
-                      <div className='w-full md:w-4/12 flex items-center my-8 justify-center'>
-                        <CardUn key={y} data={x} />
-                      </div>
-                    );
-                  }
-                  return (
-                    <div className='w-full md:w-4/12 flex items-center my-8 justify-center'></div>
-                  );
-                })}
+              {peopleWeLove.map((x: ICardBody, y: number) => (
+                <div className='w-full md:w-4/12 flex items-center my-8 justify-center'>
+                  <CardUn key={y} data={x} />
+                </div>
+              ))}
             </div>
           </>
         )}
 
-        {isShow.team && (
+        {team.length > 0 && (
           <>
-            <h1>TEAM</h1>
+            <h4 className='text-4xl text-center my-4'>Team Members</h4>
             <div className='container flex p-4 flex-wrap justify-center'>
-              {data &&
-                data.map((x: ICardBody, y: number) => {
-                  if (x.type === 'Team Member') {
-                    return (
-                      <div className='w-full md:w-4/12 flex items-center my-8 justify-center '>
-                        <CardUn key={y} data={x} />
-                      </div>
-                    );
-                  }
-                  return (
-                    <div className='w-full md:w-4/12 flex items-center my-8 justify-center'></div>
-                  );
-                })}
+              {team.map((x: ICardBody, y: number) => (
+                <div className='w-full md:w-4/12 flex items-center my-8 justify-center'>
+                  <CardUn key={y} data={x} />
+                </div>
+              ))}
             </div>
           </>
         )}
 
-        {isShow.anonyme && (
+        {anonyme.length > 0 && (
           <>
-            <h1>Anonyme</h1>
+            <h4 className='text-4xl text-center my-4'>Anonyme</h4>
             <div className='container flex p-4 flex-wrap justify-center'>
-              {data &&
-                data.map((x: any, y: number) => {
-                  if (x.type === 'Anonyme') {
-                    return (
-                      <div className='w-full md:w-4/12 flex items-center my-8 justify-center'>
-                        <FaUserCircle key={y} size={96} />
-                      </div>
-                    );
-                  }
-                  return (
-                    <div className='w-full md:w-4/12 flex items-center my-8 justify-center'></div>
-                  );
-                })}
+              {anonyme.map((x: ICardBody, y: number) => (
+                <div className='w-full md:w-4/12 flex items-center my-8 justify-center'>
+                  <CardUn key={y} data={x} />
+                </div>
+              ))}
             </div>
           </>
         )}

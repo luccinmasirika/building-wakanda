@@ -24,7 +24,7 @@ export const ProjectsPage: React.FC<IProjectPageProps> = (props) => {
   }, []);
   return (
     <>
-      <Banner state={false} title='Our projects' />
+      <Banner state={false} title={data.title} />
       <div className='w-ful relative z-10 bg-white'>
         <div className='container p-4 md:py-12 md:mx-auto md:px-32 py-4 '>
           <img
