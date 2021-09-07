@@ -21,13 +21,13 @@ const Routes: React.FC = () => {
       </header>
       <Switch>
         <Route exact path='/' component={Home} />
-        <Route exact path='/gallery' component={Galley} />
+        {/* <Route exact path='/gallery' component={Galley} />
         <Route exact path='/our-projects' component={OurProjects} />
         <Route exact path='/our-projects/:id' component={ProjectsPage} />
         <Route exact path='/our-team' component={OurLeaders} />
-        <Route exact path='/contact-us' component={ContactUs} />
         <Route exact path='/blog' component={Blog} />
-        <Route exact path='/blog/:id' component={BlogPage} />
+        <Route exact path='/blog/:id' component={BlogPage} /> */}
+        <Route exact path='/contact-us' component={ContactUs} />
         <Route path='*' component={NotFound} />
       </Switch>
       <Footer />
