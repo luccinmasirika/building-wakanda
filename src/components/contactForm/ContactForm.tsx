@@ -80,7 +80,7 @@ export const ContactForm: React.FC<IContactFormProps> = (props) => {
         type='text'
         name='email'
         placeholder='Email'
-        Aria-label='Email'
+        aria-label='Email'
         onChange={handelChange('email')}
         className='rounded-lg p-5 my-2 border-2'
       />

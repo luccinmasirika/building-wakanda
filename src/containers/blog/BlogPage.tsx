@@ -66,12 +66,17 @@ export const BlogPage: React.FC<IBlogPageProps> = (props) => {
               dangerouslySetInnerHTML={{ __html: data.content }}
             />
           ) : (
-            <div className=''>
-              <div className='w-full mt-10 h-8 rounded-3xl bg-gray-300 animate-pulse'></div>
-              <div className='w-full mt-10 h-8 rounded-3xl bg-gray-300 animate-pulse'></div>
-              <div className='w-full mt-10 h-8 rounded-3xl bg-gray-300 animate-pulse'></div>
-              <div className='w-full mt-10 h-8 rounded-3xl bg-gray-300 animate-pulse'></div>
-            </div>
+            <>
+              <div className='w-8/12 my-6 h-6 mx-auto rounded-3xl bg-gray-300 animate-pulse'></div>
+              {Array(7)
+                .fill(null)
+                .map((x, y) => (
+                  <div
+                    key={y}
+                    className='w-full my-2 h-4 rounded-3xl bg-gray-300 animate-pulse'
+                  ></div>
+                ))}
+            </>
           )}
           <div className='w-full flex items-center justify-center px-4 py-8'>
             <Link

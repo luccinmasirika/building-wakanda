@@ -64,7 +64,7 @@ export const Menu: React.FC<IMenuProps> = (props) => {
                 </span>
               </Link>
             </li>
-            {/* <li>
+            <li>
               <Link
                 to='/our-projects'
                 className={`${useActivetPath('/our-projects')}`}
@@ -106,7 +106,7 @@ export const Menu: React.FC<IMenuProps> = (props) => {
               >
                 <span className='block px-4 py-1 md:p-2 lg:px-4'>Gallery</span>
               </Link>
-            </li> */}
+            </li>
             <li>
               <Link
                 to='/contact-us'

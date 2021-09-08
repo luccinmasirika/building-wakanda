@@ -16,14 +16,15 @@ export const Galley: React.FC<IGalleyProps> = (props) => {
     links: [],
   });
 
-  const photos = gallery.images.map((x) => `${API}/${x}`);
+  const photos =
+    gallery && gallery.images && gallery.images.map((x) => `${API}/${x}`);
 
   const loadData = async () => {
     const data = await onGetData(`/get/all/gallery`);
     setGallery({
       ...gallery,
-      images: data.images,
-      links: data.links,
+      images: data && data.images,
+      links: data && data.links,
     });
   };
 
@@ -44,12 +45,14 @@ export const Galley: React.FC<IGalleyProps> = (props) => {
         />
         <div className='flex w-full md:p-12 p-4 md:justify-center px-4 overflow-auto'></div>
         <div className='grid grid-cols-1 md:grid-cols-4 gap-4 md:mx-44 px-3'>
-          {gallery && gallery.images.length > 1
-            ? gallery.images.map((x, y) => {
+          {gallery && gallery.images && gallery.images.length > 1
+            ? gallery &&
+              gallery.images.map((x, y) => {
                 if (y < limitPhoto) {
                   return (
                     <div
-                      className='bg-gray-200 w-full h-48 rounded-md cursor-pointer'
+                      key={y}
+                      className='bg-gray-300 w-full h-48 rounded-md cursor-pointer'
                       onClick={() => {
                         setIsOpen(true);
                         setActive(y);
@@ -71,20 +74,20 @@ export const Galley: React.FC<IGalleyProps> = (props) => {
                 .map((x, y) => (
                   <div
                     key={y}
-                    className='bg-gray-200 w-full h-48 rounded-md animate-pulse'
+                    className='bg-gray-300 w-full h-48 rounded-md animate-pulse'
                   />
                 ))}
         </div>
-        <div className='flex w-full md:p-12 p-4 md:justify-center px-4 '>
+        <div className='flex w-full items-center pt-12 md:justify-center px-4 '>
           <div
             onClick={() => setLimitPhoto(limitPhoto + 12)}
-            className='rounded-full py-3 flex flex-nowrap justify-center items-center px-8 mx-3 cursor-pointer text-white bg-gray-900 hover:bg-yellow-500 active:bg-gray-500'
+            className='rounded-full py-3 px-8 mx-auto cursor-pointer text-white bg-gray-900 hover:bg-yellow-500 active:bg-gray-500'
           >
             Load more
           </div>
         </div>
         <div className='w-full bg-gray-100 h-40 transform -skew-y-2 translate-y-28 z-0'></div>
-        <div className='w-full bg-gray-100 py-24'>
+        <div className='w-full bg-gray-100 pt-24 pb-12'>
           <div className='grid grid-cols-1 md:grid-cols-3 gap-4 md:mx-44 px-3 z-1'>
             {gallery && gallery.links.length > 1
               ? gallery.links.map((x, y) => {
@@ -103,7 +106,7 @@ export const Galley: React.FC<IGalleyProps> = (props) => {
                   }
                   return false;
                 })
-              : Array(12)
+              : Array(6)
                   .fill(null)
                   .map((x, y) => (
                     <div
@@ -113,10 +116,10 @@ export const Galley: React.FC<IGalleyProps> = (props) => {
                   ))}
           </div>
         </div>
-        <div className='flex w-full md:p-12 p-4 md:justify-center px-4 bg-gray-100'>
+        <div className='flex w-full md:pb-20 pb-10 md:justify-center px-4 bg-gray-100'>
           <div
             onClick={() => setLimitVideo(limitVideo + 6)}
-            className='rounded-full py-3 flex flex-nowrap justify-center items-center px-8 mx-3 cursor-pointer text-white bg-gray-900 hover:bg-yellow-500 active:bg-gray-500'
+            className='rounded-full py-3 flex flex-nowrap mx-auto px-8 cursor-pointer text-white bg-gray-900 hover:bg-yellow-500 active:bg-gray-500'
           >
             Load more
           </div>

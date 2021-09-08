@@ -46,14 +46,14 @@ export const Blog: React.FC<IBlogProps> = (props) => {
           <div className='w-full flex mb-8 flex-wrap md:flex-nowrap'>
             {popular.length > 1
               ? popular.map((x: IData, y: number) => (
-                  <div className='w-full md:w-2/4 mx-2 rounded-lg' key={y}>
+                  <div className='w-full md:w-2/4 m-2 rounded-lg' key={y}>
                     <ArticleCard data={x} />
                   </div>
                 ))
               : Array(2)
                   .fill(null)
                   .map((x, y) => (
-                    <div className='w-full md:w-2/4 mx-2 rounded-lg' key={y}>
+                    <div className='w-full md:w-2/4 m-2 rounded-lg' key={y}>
                       <div className='w-full h-80 bg-gray-300 animate-pulse rounded-lg'></div>
                     </div>
                   ))}
@@ -78,18 +78,16 @@ export const Blog: React.FC<IBlogProps> = (props) => {
               </div>
             </div>
           </div>
-          {blog.length > 1 && (
-            <div className='flex container w-full items-center justify-center p-16'>
-              <button
-                onClick={() => {
-                  setLimit(limit + 6);
-                }}
-                className='rounded-full py-3 flex flex-nowrap justify-center items-center px-8 mx-3 cursor-pointer text-white bg-gray-900 hover:bg-yellow-500 active:bg-gray-500'
-              >
-                {loading ? 'Loading...' : 'Load More'}
-              </button>
-            </div>
-          )}
+          <div className='flex container w-full items-center justify-center p-16'>
+            <button
+              onClick={() => {
+                setLimit(limit + 6);
+              }}
+              className='rounded-full py-3 flex flex-nowrap justify-center items-center px-8 mx-3 cursor-pointer text-white bg-gray-900 hover:bg-yellow-500 active:bg-gray-500'
+            >
+              {loading ? 'Loading...' : 'Load More'}
+            </button>
+          </div>
         </div>
       </div>
     </>
